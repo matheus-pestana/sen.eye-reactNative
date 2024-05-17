@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, TouchableOpacity, StyleSheet, ScrollView, Dimensions, Alert } from 'react-native';
+import { Text, StyleSheet, ScrollView, Dimensions, Alert, View, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -34,11 +34,60 @@ export default function Perfil() {
 
     return (
         <SafeAreaView style={styles.safeArea}>
-            <ScrollView keyboardShouldPersistTaps='handled' style={styles.scroll}>
-                <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+            <ScrollView style={styles.scroll}>
+                <View style={styles.container}>
+                    <View style={styles.profile}>
+                        <ImageBackground
+                            source={require('../assets/booTao.jpg')}
+                            resizeMode="cover"
+                            style={styles.background}>
+                            <View style={styles.profileContent}>
+                                <Image
+                                    style={styles.profileImg}
+                                    source={{ uri: 'https://static.wikia.nocookie.net/gensin-impact/images/e/e9/Hu_Tao_Icon.png/revision/latest/scale-to-width/360?cb=20210228210611' }}
+                                />
+                                <View style={styles.texts}>
+                                    <Text style={styles.text}>Nome: Hu Tao</Text>
+                                    <Text style={styles.text}>E-mail: HuTao22@gmail.com</Text>
+                                    <Text style={styles.text}>Tel: +55 12 99162-9828</Text>
+                                </View>
+                            </View>
+
+                            <View style={styles.itens}>
+                                <View style={styles.itensContent}>
+                                    <Text>E-mail:</Text>
+                                    <Text style={styles.sla}>Hutao22@gmail.com</Text>
+                                </View>
+                                <View style={styles.itensContent}>
+                                    <Text>Nome:</Text>
+                                    <Text style={styles.sla}>Hu Tao</Text>
+                                </View>
+                                <View style={styles.itensContent}>
+                                    <Text>Senha</Text>
+                                    <Text style={styles.sla}>********</Text>
+                                </View>
+                                <View style={styles.itensContent}>
+                                    <Text>Telefone:</Text>
+                                    <Text style={styles.sla}>+55 12 99162-9828</Text>
+                                </View>
+                            </View>
+
+                            <View style={styles.altera}>
+                                <TouchableOpacity style={styles.alteraFundo}>
+                                    <Text>Alterar fundo de perfil</Text>
+                                </TouchableOpacity>
+                            </View>
+
+                        </ImageBackground>
+
+                    </View>
+                </View>
+
+
+
+                {/* <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
                     <Text style={styles.logoutText}>🤠</Text>
-                </TouchableOpacity>
-        
+                </TouchableOpacity> */}
             </ScrollView>
         </SafeAreaView >
     );
@@ -47,7 +96,7 @@ export default function Perfil() {
 const styles = StyleSheet.create({
 
     safeArea: {
-        backgroundColor: '#e7efff',
+        backgroundColor: 'white',
         flex: 1,
     },
 
@@ -55,78 +104,87 @@ const styles = StyleSheet.create({
         flexGrow: 1,
     },
 
-    background: {
+    container: {
+        width: windowWidth,
+        flex: 1,
+    },
+
+    profile: {
         width: windowWidth,
         height: windowHeight,
+    },
+
+    background: {
+        width: '100%',
+        height: '85%',
+        alignItems: 'center',
+    },
+
+    profileContent: {
+        margin: 20,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        width: 'auto',
+        height: 'auto',
+        gap: 20,
+    },
+
+    profileImg: {
+        backgroundColor: 'red',
+        borderRadius: 100,
+        borderColor: 'black',
+        borderWidth: 2,
+        flex: 1,
+        width: 150,
+        height: 150,
+        resizeMode: 'cover'
+    },
+
+    texts: {
+        justifyContent: 'center',
+        width: 'auto',
+        height: 'auto',
+    },
+
+    text: {
+        fontSize: 14,
+        fontWeight: 'bold',
+    },
+
+    itens: {
+        backgroundColor: 'white',
+        borderRadius: 10,
+        width: '90%',
+        height: 'auto',
+        padding: 15,
+    },
+
+    itensContent: {
+        borderBottomColor: 'gray',
+        borderBottomWidth: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 10,
+    },
+
+    sla: {
+        color: 'gray',
+    },
+
+    altera: {
+        width: '100%',
+        height: '100%',
         justifyContent: 'center',
         alignItems: 'center',
     },
 
-    card1: {
-        margin: 10,
-        padding: 20,
-        borderRadius: 10,
+    alteraFundo: {
+        width: '90%',
+        height: '100px',
         backgroundColor: 'white',
-    },
-
-    cards: {
-        marginBottom: 50,
-        padding: 20,
-        gap: 10,
-        borderRadius: 10,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignContent: 'center',
-    },
-
-    card2: {
-        backgroundColor: 'white',
-        width: 170,
-        height: 350,
-        padding: 20,
-        borderRadius: 10,
-    },
-
-    title: {
-        fontSize: 24,
-    },
-
-    saibaMais: {
-        backgroundColor: '#e7efff',
-        padding: 10,
-        borderRadius: 10,
-        margin: 10,
-    },
-
-    saibaText: {
-        textAlign: 'center',
-        fontSize: 20,
-    },
-
-    img: {
-        marginBottom: 10,
-        width: 170,
-        height: 170,
-        borderRadius: 20,
-    },
-
-    logoutButton: {
-        width: 60,
-        backgroundColor: 'white',
-        borderRadius: 5,
-        marginTop: 10,
-    },
-
-    logoutText: {
-        fontSize: 50,
-    },
-
-    logoImg: {
-        width: '100%',
-    },
-    buttonText: {
-        color: '#000',
-        fontSize: 16,
-        textAlign: 'center',
-    },
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+    }
 });

@@ -1,31 +1,24 @@
-import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Image, ScrollView, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
 
 export default function Notificacoes() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const navigation = useNavigation();
-
-    const handleLogout = () => {
-        setIsLoggedIn(false);
-        console.log('Logout realizado com sucesso!');
-        navigation.navigate('Login');
-    };
-
     return (
         <SafeAreaView style={styles.safeArea}>
-            <ImageBackground
-                source={require('../assets/Sem título.png')}
-                resizeMode="cover"
-                style={styles.background}>
-            </ImageBackground>
+
+            <View style={styles.container}>
+                <Image
+                    style={styles.img}
+                    source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Noun_Project_maintenance_icon_943595_cc.svg/1200px-Noun_Project_maintenance_icon_943595_cc.svg.png' }}
+                />
+                <Text style={styles.text}>Página em manutenção, volte aqui mais tarde.</Text>
+            </View>
+
         </SafeAreaView >
     );
 }
+
 
 const styles = StyleSheet.create({
 
@@ -34,12 +27,25 @@ const styles = StyleSheet.create({
         flex: 1,
     },
 
-
-    background: {
-        width: windowWidth,
-        height: windowHeight,
+    container: {
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
 
-});
+    img: {
+        width: 150,
+        height: 150,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    text: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: 'black',
+        textAlign: 'center',
+        margin: 20,
+    }
+
+}) 

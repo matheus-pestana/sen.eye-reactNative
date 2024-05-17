@@ -74,7 +74,7 @@ function MyTabs() {
                 }} />
             <Tab.Screen name="Perfil" component={Perfil}
                 options={{
-                    headerShown: true,
+                    headerShown: false,
                     tabBarIcon: ({ focused, size, color }) => {
                         if (focused) {
                             return (<Ionicons
