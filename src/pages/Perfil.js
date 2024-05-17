@@ -38,29 +38,29 @@ export default function Perfil() {
                 <View style={styles.container}>
                     <View style={styles.profile}>
                         <ImageBackground
-                            source={require('../assets/booTao.jpg')}
+                            source={require('../assets/background_profile.jpg')}
                             resizeMode="cover"
                             style={styles.background}>
                             <View style={styles.profileContent}>
                                 <Image
                                     style={styles.profileImg}
-                                    source={{ uri: 'https://static.wikia.nocookie.net/gensin-impact/images/e/e9/Hu_Tao_Icon.png/revision/latest/scale-to-width/360?cb=20210228210611' }}
+                                    source={require('../assets/profile.png')}
                                 />
                                 <View style={styles.texts}>
-                                    <Text style={styles.text}>Nome: Hu Tao</Text>
-                                    <Text style={styles.text}>E-mail: HuTao22@gmail.com</Text>
-                                    <Text style={styles.text}>Tel: +55 12 99162-9828</Text>
+                                    <Text style={styles.text}>Nome: Usuario</Text>
+                                    <Text style={styles.text}>E-mail: usuario@gmail.com</Text>
+                                    <Text style={styles.text}>Tel: +55 12 12345-6789</Text>
                                 </View>
                             </View>
 
                             <View style={styles.itens}>
                                 <View style={styles.itensContent}>
                                     <Text>E-mail:</Text>
-                                    <Text style={styles.sla}>Hutao22@gmail.com</Text>
+                                    <Text style={styles.sla}>usuario@gmail.com</Text>
                                 </View>
                                 <View style={styles.itensContent}>
                                     <Text>Nome:</Text>
-                                    <Text style={styles.sla}>Hu Tao</Text>
+                                    <Text style={styles.sla}>Usuario</Text>
                                 </View>
                                 <View style={styles.itensContent}>
                                     <Text>Senha</Text>
@@ -68,14 +68,8 @@ export default function Perfil() {
                                 </View>
                                 <View style={styles.itensContent}>
                                     <Text>Telefone:</Text>
-                                    <Text style={styles.sla}>+55 12 99162-9828</Text>
+                                    <Text style={styles.sla}>+55 12 12345-6789</Text>
                                 </View>
-                            </View>
-
-                            <View style={styles.altera}>
-                                <TouchableOpacity style={styles.alteraFundo}>
-                                    <Text>Alterar fundo de perfil</Text>
-                                </TouchableOpacity>
                             </View>
 
                         </ImageBackground>
@@ -116,7 +110,7 @@ const styles = StyleSheet.create({
 
     background: {
         width: '100%',
-        height: '85%',
+        height: '100%',
         alignItems: 'center',
     },
 
@@ -130,14 +124,13 @@ const styles = StyleSheet.create({
     },
 
     profileImg: {
-        backgroundColor: 'red',
+        backgroundColor: 'white',
         borderRadius: 100,
         borderColor: 'black',
         borderWidth: 2,
         flex: 1,
         width: 150,
         height: 150,
-        resizeMode: 'cover'
     },
 
     texts: {
