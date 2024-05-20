@@ -23,7 +23,7 @@ export default function Notificacoes() {
                                         <Text style={styles.notificationDate}>15/02/2024 15:36</Text>
                                     </View>
                                     <Text style={styles.notificationMessage}>
-                                        Nosso sistema está passando por uma manutenção não se preocupe não afetará em nada na funcionalidade do aplicativo.
+                                        Nosso sistema está passando por uma manutenção, mas não se preocupe, o aplicativo não será afetado.
                                     </Text>
                                 </View>
                             </View>
